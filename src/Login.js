@@ -1,4 +1,7 @@
 import { useState } from "react"
+import ErrorLabel from "./components/ErrorLabel"
+import Input from "./components/Input"
+import Button from "./components/Button"
 import "./Login.css"
 export default function Login() {
     const [username, setUsername] = useState("")
@@ -11,15 +14,11 @@ export default function Login() {
     }
     return (
         <div id="login-form">
-            <input type="text" value={username} onChange={e => setUsername(e.target.value)} />
-            {
-                !validUser() && <label className="error">Username must be lowercase only</label>
-            }
-            <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
-            {
-                !validPassword() && <label className="error">Password must be at least 8 characters</label>
-            }
-            <button>Login</button>
+            <Input type="text" value={username} setter={setUsername} />
+            <ErrorLabel validator={validUser} message="Username must be lowercase only" />
+            <Input type="password" value={password} setter={setPassword} />
+            <ErrorLabel validator={validPassword} message="Password must be at least 8 characters" />
+            <Button text="Login"></Button>
             <p className="message">Not registered? <a href="">Create an account</a></p>
         </div>
     )
