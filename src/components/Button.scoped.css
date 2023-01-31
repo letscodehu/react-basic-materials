@@ -1,4 +1,4 @@
-#login-form button {
+button {
     font-family: "Roboto", sans-serif;
     width: 100%;
     color: #fff;
@@ -13,7 +13,7 @@
     -webkit-transition: all 0.3 ease;
 }
 
-#login-form button:hover, #login-form button:active, #login-form button:focus {
+button:hover, button:active, button:focus {
     background: #43a047;
 }
 

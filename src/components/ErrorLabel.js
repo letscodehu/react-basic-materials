@@ -1,4 +1,4 @@
-import './ErrorLabel.css'
+import './ErrorLabel.scoped.css'
 export default function ErrorLabel(props) {
     if (props.validator()) {
         return null
