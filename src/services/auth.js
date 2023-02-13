@@ -14,5 +14,15 @@ function login(email, password) {
         })
 }
 
+function register(email, password) {
+    fetch("http://localhost:3000/register", {
+        "method": "POST",
+        "headers": {
+            "Content-type": "application/json",
+            "Accept": "application/json"
+        },
+        "body": JSON.stringify({ email, password })
+    })
+}
 const Auth = { login }
 export default Auth
