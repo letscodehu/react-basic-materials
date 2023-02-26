@@ -1,9 +1,9 @@
 import { useState } from "react"
-import ErrorLabel from "./components/ErrorLabel"
-import Input from "./components/Input"
-import Button from "./components/Button"
+import ErrorLabel from "../components/ErrorLabel"
+import Input from "../components/Input"
+import Button from "../components/Button"
 import "./Login.css"
-import auth from "./services/auth"
+import auth from "../services/auth"
 import { useNavigate } from "react-router-dom"
 
 export default function Login() {
@@ -20,9 +20,7 @@ export default function Login() {
     function login() {
         setLoginError({ error: false })
         auth.login(username.value, password.value)
-            .then(
-                navigate("/")
-            ).catch(error =>
+            .then(navigate("/")).catch(error =>
                 setLoginError({ message: error, error: true })
             )
     }

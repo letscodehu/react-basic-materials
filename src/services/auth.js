@@ -10,19 +10,16 @@ function login(email, password) {
         .then(r => r.json())
         .then((content) => {
             if (typeof content === 'string') throw content
-            else return content
+            else {
+                user = content;
+                return content
+            }
         })
 }
+let user = null
 
-function register(email, password) {
-    fetch("http://localhost:3000/register", {
-        "method": "POST",
-        "headers": {
-            "Content-type": "application/json",
-            "Accept": "application/json"
-        },
-        "body": JSON.stringify({ email, password })
-    })
+function loggedIn() {
+    return user != null;
 }
-const Auth = { login }
+const Auth = { login, loggedIn }
 export default Auth

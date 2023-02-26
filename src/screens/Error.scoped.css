@@ -1,0 +1,15 @@
+h1 {
+    font-family: "Roboto", sans-serif;
+    font-size: 4em;
+}
+p {
+    font-family: "Roboto", sans-serif;
+}
+.container {
+    width: 350px;
+    font-size: 14px;
+    background: #fff;
+    padding: 2em;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.2), 0 5px 5px 0 rgba(0,0,0, 0.24);
+}
