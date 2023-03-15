@@ -6,11 +6,22 @@ import './index.css';
 import Login from './screens/Login'
 import Auth from './services/auth';
 import Error from './screens/Error';
+import Register from './screens/Register';
 
 const router = createBrowserRouter([
     {
         path: "/login",
         element: <Login />,
+        loader: () => {
+            if (Auth.loggedIn()) {
+                return redirect("/")
+            }
+            return null
+        }
+    },
+    {
+        path: "/register",
+        element: <Register />,
         loader: () => {
             if (Auth.loggedIn()) {
                 return redirect("/")

@@ -17,7 +17,8 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "eject": "craco eject"
+    "eject": "craco eject",
+    "server": "json-server-auth -w db.json"
   },
   "eslintConfig": {
     "extends": [
