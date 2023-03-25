@@ -1,0 +1,20 @@
+.grid-container {
+    top: 0;
+    left: 0;
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    grid-template-rows: 50px 1fr 50px;
+    grid-template-areas: 'aside header' 'aside main' 'aside footer';
+    position: fixed;
+    grid-gap: 5px;
+    height: 100%;
+    width: 100%;
+    font-family: "Roboto", sans-serif;
+}
+
+.main {
+    grid-area: main;
+    padding: 1em;
+    background: #fff;
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.2), 0 5px 5px 0 rgba(0,0,0, 0.24);
+}

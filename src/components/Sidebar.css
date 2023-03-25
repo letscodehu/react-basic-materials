@@ -1,0 +1,28 @@
+.aside {
+    grid-area: aside;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.2), 0 5px 5px 0 rgba(0,0,0, 0.24);
+}
+.aside_list {
+    padding: 0;
+    margin-top: 85px;
+    list-style-type: none;
+}
+.aside_list-item {
+    padding: 20px 20px 20px 40px;
+}
+
+.aside_list-item:hover {
+    background-color: #4caf50;
+    cursor: pointer;
+}
+
+.aside_list-item:hover a {
+    color: #fff;
+}
+a {
+    color: #000;
+    text-decoration: none;
+}

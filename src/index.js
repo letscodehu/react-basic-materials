@@ -7,6 +7,9 @@ import Login from './screens/Login'
 import Auth from './services/auth';
 import Error from './screens/Error';
 import Register from './screens/Register';
+import Dashboard from './layouts/Dashboard';
+import Contacts from './screens/Contact';
+import Assets from './screens/Asset';
 
 const router = createBrowserRouter([
     {
@@ -31,14 +34,28 @@ const router = createBrowserRouter([
     },
     {
         path: "/",
-        element: <Home />,
+        element: <Dashboard />,
         loader: () => {
             if (!Auth.loggedIn()) {
                 return redirect("/login")
             }
             return null
         },
-        errorElement: <Error/>
+        children: [
+            {
+                path: "/",
+                element: <Home />,
+            },
+            {
+                path: "/contact",
+                element: <Contacts />,
+            },
+            {
+                path: "/asset",
+                element: <Assets />,
+            }
+        ],
+        errorElement: <Error />
     }
 ])
 const root = ReactDOM.createRoot(document.getElementById('root'));
