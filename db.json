@@ -13,6 +13,15 @@
       "id": 1
     }
   ],
+  "accounts" : [{
+      "id" :1,
+      "name":"Some account"
+  },
+{
+      "id" :2,
+      "name":"Other account"
+  }
+  ],
   "comments": [
     {
       "id": 1,

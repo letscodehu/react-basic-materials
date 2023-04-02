@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, redirect, RouterProvider } from 'react-router-dom';
-import Home from './screens/Home';
 import './index.css';
 import Login from './screens/Login'
 import Auth from './services/auth';
@@ -10,6 +9,8 @@ import Register from './screens/Register';
 import Dashboard from './layouts/Dashboard';
 import Contacts from './screens/Contact';
 import Assets from './screens/Asset';
+import Accounts from './screens/Account';
+import AccountService from './services/AccountService';
 
 const router = createBrowserRouter([
     {
@@ -44,7 +45,8 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "/",
-                element: <Home />,
+                element: <Accounts />,
+                loader: AccountService.all
             },
             {
                 path: "/contact",
